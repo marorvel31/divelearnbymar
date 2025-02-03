@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-:root {
+:root { /* acceder a las custom properties desde cualquier elemento */ 
     --padding-container: 100px 0;
     --color-title: #001A49;
 }
@@ -12,30 +12,30 @@ body {
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; /* se centra */
     overflow: hidden;
-    padding: var(--padding-container);
+    padding: var(--padding-container); /* pagin arriba y abajo de 100 px y arriba y abajo 0 */
 }
-
-.hero {
+/* hero e hijo */ 
+.hero { /* ancho del navegador */ /* imagen de fondo */ 
     width: 100%;
     height: 100vh;
     min-height: 600px;
     max-height: 800px;
     position: relative;
     display: grid;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 100px 1fr; /* 2 filas y despues de 100 px  otra fila para contenido sobrante */
     color: #fff;
 }
 
-.hero::before {
+.hero::before { /* subelemento creado a partir de hero para que se posisione a su padre */
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/computer.jpg');
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 1%), url('../images/ballena.jpg'); /*capa de transparencia a la imagen */
     background-size: cover;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
     z-index: -1;
@@ -111,7 +111,7 @@ body {
     margin-bottom: 20px;
 }
 
-.cta {
+.cta { /*fondo del boton lmitando su espacio*/
     display: inline-block;
     background-color: #2091F9;
     justify-self: center;
@@ -193,6 +193,69 @@ body {
     display: block;
 }
 
+/* Contactos */
+
+/* 📌 Estilos de la tabla */
+#contactsTable {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#contactsTable thead {
+    background-color: #2091F9;
+    color: white;
+}
+
+#contactsTable th, #contactsTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#contactsTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 📌 Efecto hover en la tabla */
+#contactsTable tbody tr:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+/* 📌 Estilos del formulario */
+.add-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    margin: 20px auto;
+}
+
+/* 📌 Botón de actualización */
+#refreshContactsBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #2091F9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#refreshContactsBtn:hover {
+    background-color: #176ab3;
+}
+
+
 /* price */
 
 .price{
@@ -224,10 +287,10 @@ body {
 .price__element--best{
     width: 370px;
     padding: 60px 40px;
-    background-color: #FF7143;
+    background-color: #177e70;
     --color-plan: rgb(255 255 255 / 75%);
     --color-price: #fff;
-    --bg-cta: #9F3919;
+    --bg-cta: #63ebf0;
     --color-cta: #FFF;
     --color-items: #fff;
 }
